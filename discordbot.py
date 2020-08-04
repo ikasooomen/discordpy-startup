@@ -3,7 +3,7 @@ import os
 import traceback
 import random
 
-bot = commands.Bot(command_prefix='/')
+bot = commands.Bot(command_prefix='@ikasooomen.bot#5425')
 token = os.environ['DISCORD_BOT_TOKEN']
 
 # APEXに関する配列
