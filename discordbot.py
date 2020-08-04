@@ -34,7 +34,7 @@ async def legends(ctx):
     await ctx.send(random.choice(randomlegends) + "を使え！")   
     
 @bot.command()
-async def (ctx):
+async def talk(ctx):
     await ctx.send(random.choice(iikaesi))       
 
 bot.run(token)
