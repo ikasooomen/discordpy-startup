@@ -40,5 +40,8 @@ async def talk(ctx):
 @bot.command()
 async def uwa(ctx):
     await ctx.send("うわ。")
+@bot.command()
+async def APEX(ctx):
+    await ctx.send("@APEX")
 
 bot.run(token)
