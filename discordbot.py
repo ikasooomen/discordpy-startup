@@ -2,6 +2,7 @@ from discord.ext import commands
 import os
 import traceback
 import random
+import omikuji
 
 bot = commands.Bot(command_prefix="/")
 token = os.environ['DISCORD_BOT_TOKEN']
@@ -32,9 +33,13 @@ async def we(ctx):
 @bot.command()
 async def legends(ctx):
     await ctx.send(random.choice(randomlegends) + "を使え！")   
-    
+ 
+# その他
 @bot.command()
 async def talk(ctx):
-    await ctx.send(random.choice(iikaesi))       
+    await ctx.send(random.choice(iikaesi))    
+@bot.command()
+async def omikuji(ctx):
+    await ctx.send(omikuji.omi())    
 
 bot.run(token)
