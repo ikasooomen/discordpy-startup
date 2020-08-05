@@ -2,8 +2,6 @@ from discord.ext import commands
 import os
 import traceback
 import random
-import asyncio
-client = discord.Client()
 
 bot = commands.Bot(command_prefix="/")
 token = os.environ['DISCORD_BOT_TOKEN']
@@ -42,14 +40,5 @@ async def talk(ctx):
 @bot.command()
 async def uwa(ctx):
     await ctx.send("うわ。")
-@bot.command()
-async def APEX(ctx):
-    await ctx.send("@APEX")
-@client.event
-async def on_message(message):
-   if message.author != client.user:
-       if message.content == "/hello":
-           msg = message.author.mention + "Fuck!"
-       await client.send_message(message.channel, msg)
 
 bot.run(token)
