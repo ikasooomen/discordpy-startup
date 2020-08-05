@@ -31,7 +31,7 @@ unk=["うんこ食え",
      "うんこウメェなこれぇ"
     ]
 
-def omi():
+def omi(omikuji_ika):
   unsei=random.choice(kuji)
   if unsei=="大吉":
      msg=random.choice(dai)
