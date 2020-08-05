@@ -40,6 +40,9 @@ async def talk(ctx):
     await ctx.send(random.choice(iikaesi))    
 @bot.command()
 async def omikuji(ctx):
-    await ctx.send(omikuji.omi())    
+    await ctx.send(omikuji.omi(5))
+@bot.command()
+async def "うわ"(ctx):
+    await ctx.send("うわ。")
 
 bot.run(token)
