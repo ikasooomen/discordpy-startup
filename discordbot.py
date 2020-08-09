@@ -36,6 +36,6 @@ async def on_message(message):
         await message.channnel.send(random.choice(randomlegends) + "を使え！")
     # その他
     elif message.content == "talk":
-        await message.channel.send(random.choice(iikaesi)) 
+        await message.channel.send(random.choice(iikaesi))
 
 bot.run(token)
