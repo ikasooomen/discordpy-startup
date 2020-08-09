@@ -14,31 +14,27 @@ randomlegends = ["レイス", "オクタン", "ミラージュ", "コーステ�
 iikaesi = ["は？死ねよ", "うんち^q^", "トイレットペーパーって美味しいよね！", "お前...誰だ？", "もしもしポリスメン？", "お前童貞臭いぞ...", "ﾃﾞｭﾌﾃﾞｭﾌwww"]
 
 @bot.event
-async def on_command_error(ctx, error):
-    orig_error = getattr(error, "original", error)
-    error_msg = ''.join(traceback.TracebackException.from_exception(orig_error).format())
-    await ctx.send(error_msg)
+async def on_message(message):
+    if message.author.bot:
+        return
+    # Apex関連
+    if message.content == "weapons":
+        await message.channel.send(random.sample(randomweapons, 2))
+    elif message.content == "weapon":
+        await message.channel.send(random.choice(randomweapons))
+    elif message.content == "kc":
+        await message.channel.send(random.choice(randomkingscanyon) + "に行け！")
+    elif message.content == "we":
+        await message.channel.send(random.choice(randomworldsedge) + "に行け！")
+    elif message.content == "legend":
+        await message.channnel.send(random.choice(randomlegends) + "を使え！")
+        
+    # その他   
+    elif message.content == "talk":
+        await message.channel.send(random.choice(iikaesi))
     
-# APEXランダム    
-@bot.command()
-async def weapons(ctx):
-    await ctx.send(random.sample(randomweapons, 2))
-@bot.command()
-async def kc(ctx):
-    await ctx.send(random.choice(randomkingscanyon) + "に行け！")
-@bot.command()
-async def we(ctx):
-    await ctx.send(random.choice(randomworldsedge) + "に行け！")
-@bot.command()
-async def legends(ctx):
-    await ctx.send(random.choice(randomlegends) + "を使え！")   
- 
-# その他
-@bot.command()
-async def talk(ctx):
-    await ctx.send(random.choice(iikaesi))    
-@bot.command()
-async def uwa(ctx):
-    await ctx.send("うわ。")
+    else:
+        await message.channnel.send("そのコマンドは存在しません")
+    
 
 bot.run(token)
