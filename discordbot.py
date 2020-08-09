@@ -37,7 +37,7 @@ async def on_message(message):
     # その他
     elif message.content == "talk":
         await message.channel.send(random.choice(iikaesi))
-@client.event
+@bot.event
 async def on_message_delete(message):
     channel = client.get_channel(DEBUG_CHANNEL_ID)
     await channel.send(f"{message.author.name}さんのメッセージが削除されました:\n```\n{message.content}\n
