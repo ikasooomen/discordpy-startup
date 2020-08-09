@@ -37,9 +37,15 @@ async def on_message(message):
     # その他
     elif message.content == "talk":
         await message.channel.send(random.choice(iikaesi))
+""" 
 @bot.event
 async def on_message_delete(message):
     channel = bot.get_channel(570722315017519115)
     await channel.send(f"{message.author.name}さんのメッセージが削除されました:\n```\n{message.content}\n```")
+"""
+@bot.event
+async def on_reaction_add(reaction,user):
+    channel = bot.get_channel(570722315017519115)
+    await channel.send("リアクションなんかつけてんじゃねぇこのチー牛野郎ｗｗ")
 
 bot.run(token)
