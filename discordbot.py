@@ -39,7 +39,7 @@ async def on_message(message):
         await message.channel.send(random.choice(iikaesi))
 @bot.event
 async def on_message_delete(message):
-    channel = client.get_channel(DEBUG_CHANNEL_ID)
+    channel = bot.get_channel(570722315017519115)
     await channel.send(f"{message.author.name}さんのメッセージが削除されました:\n```\n{message.content}\n```")
 
 bot.run(token)
