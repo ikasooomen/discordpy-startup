@@ -37,6 +37,3 @@ async def on_message(message):
     # その他
     elif message.content == "talk":
         await message.channel.send(random.choice(iikaesi))
-@bot.command()
-async def tracker(ctx, A):
-    await ctx.channel.send(A)
