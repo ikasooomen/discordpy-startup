@@ -34,20 +34,9 @@ async def on_message(message):
         await message.channel.send(random.choice(randomworldsedge) + "に行け！")
     elif message.content == "legend":
         await message.channnel.send(random.choice(randomlegends) + "を使え！")
-    elif message.content == "test":
-        input_text = input("何か入力して")
-        await message.channel.send(input_text)
     # その他
     elif message.content == "talk":
         await message.channel.send(random.choice(iikaesi))
-"""
-@bot.event
-async def on_message_delete(message):
-    channel = bot.get_channel(570722315017519115)
-    await channel.send(f"{message.author.name}さんのメッセージが削除されました:\n```\n{message.content}\n```")
-"""
-@bot.event
-async def on_reaction_add(reaction, user):
-    channel = bot.get_channel(570722315017519115)
-    await channel.send("リアクションなんかつけてんじゃねぇこのチー牛野郎ｗｗ")
-bot.run(token)
+@bot.command()
+async def tracker(ctx, A):
+    await message.channel.send(A)
