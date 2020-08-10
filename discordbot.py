@@ -39,4 +39,4 @@ async def on_message(message):
         await message.channel.send(random.choice(iikaesi))
 @bot.command()
 async def tracker(ctx, A):
-    await message.channel.send(A)
+    await ctx.channel.send(A)
